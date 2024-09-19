@@ -1,66 +1,97 @@
 <!doctype html>
-<html>
+<html class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/franken-ui-releases@0.0.13/dist/neutral.min.css" />
   <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit-icons.min.js"></script>
+  <style>
+      * {
+          font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+          --background: 0 0% 100%;
+          --foreground: 240 10% 3.9%;
+          --muted: 240 4.8% 95.9%;
+          --muted-foreground: 240 3.8% 46.1%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 240 10% 3.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 240 10% 3.9%;
+          --border: 240 5.9% 90%;
+          --input: 240 5.9% 90%;
+          --primary: 240 5.9% 10%;
+          --primary-foreground: 0 0% 98%;
+          --secondary: 240 4.8% 95.9%;
+          --secondary-foreground: 240 5.9% 10%;
+          --accent: 240 4.8% 95.9%;
+          --accent-foreground: 240 5.9% 10%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 0 0% 98%;
+          --ring: 240 5.9% 10%;
+          --radius: 0.5rem;
+      }
+
+      .dark {
+          --background: 240 10% 3.9%;
+          --foreground: 0 0% 98%;
+          --muted: 240 3.7% 15.9%;
+          --muted-foreground: 240 5% 64.9%;
+          --popover: 240 10% 3.9%;
+          --popover-foreground: 0 0% 98%;
+          --card: 240 10% 3.9%;
+          --card-foreground: 0 0% 98%;
+          --border: 240 3.7% 15.9%;
+          --input: 240 3.7% 15.9%;
+          --primary: 0 0% 98%;
+          --primary-foreground: 240 5.9% 10%;
+          --secondary: 240 3.7% 15.9%;
+          --secondary-foreground: 0 0% 98%;
+          --accent: 240 3.7% 15.9%;
+          --accent-foreground: 0 0% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 0 0% 98%;
+          --ring: 240 4.9% 83.9%;
+      }
+  </style>
 </head>
-<body>
-<section class="">
-  <div class='flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black'>
-    <div class="flex items-center justify-center min-h-[450px]">
-      <div class="border border-gray border-opacity-20 shadow-2xl sm:rounded-xl">
-        <table class="w-full text-sm text-left text-gray-400 dark:text-gray-400">
-          <thead class="text-xs text-gray-300 uppercase bg-gray-700 dark:bg-gray-700 dark:text-gray-400">
-          <tr>
-            <th scope="col" class="py-3 px-6">Nr</th>
-            <th scope="col" class="py-3 px-6">Godz.</th>
-            <th scope="col" class="py-3 px-6">Sala</th>
-            <th scope="col" class="py-3 px-6">Poniedziałek</th>
-            <th scope="col" class="py-3 px-6">Wtorek</th>
-            <th scope="col" class="py-3 px-6">Środa</th>
-            <th scope="col" class="py-3 px-6">Czwartek</th>
-            <th scope="col" class="py-3 px-6">Piątek</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr class="border-b border-gray">
-            <td class="py-4 px-6">1</td>
-            <td class="py-4 px-6">7:10- 7:55</td>
-          </tr>
-          <tr class="border-b border-gray">
-            <td class="py-4 px-6">2</td>
-            <td class="py-4 px-6">8:00- 8:45</td>
-          </tr>
-          <tr class="border-b border-gray">
-            <td class="py-4 px-6">3</td>
-            <td class="py-4 px-6">8:50- 9:35</td>
-          </tr>
-          <tr class="border-b border-gray">
-            <td class="py-4 px-6">4</td>
-            <td class="py-4 px-6">9:40-10:25</td>
-          </tr>
-          <tr class="border-b border-gray">
-            <td class="py-4 px-6">5</td>
-            <td class="py-4 px-6">10:40-11:25</td>
-          </tr>
-          <tr class="border-b border-gray">
-            <td class="py-4 px-6">6</td>
-            <td class="py-4 px-6">11:30-12:15</td>
-          </tr>
-          <tr class="border-b border-gray">
-            <td class="py-4 px-6">7</td>
-            <td class="py-4 px-6">12:20-13:05</td>
-          </tr>
-          <tr class="">
-            <td class="py-4 px-6">8</td>
-            <td class="py-4 px-6">13:10-13:55</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<body class="bg-background text-foreground">
+  <div id="sitebar" class="absolute h-screen w-[150px] border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-[10%] p-4">
+    <h4 class="font-medium">Rozpiska Sal</h4>
+      <ul class="flex flex-col pl-2 text-sm">
+        <li class="text-link underline"><a href="/">1</a></li>
+        <li class="text-link underline"><a href="/">2</a></li>
+        <li class="text-link underline"><a href="/">3</a></li>
+        <li class="text-link underline"><a href="/">4</a></li>
+      </ul>
+<!--    TODO: Kiedys zrobie-->
+<!--    <div id="hoverBtn" class="ml-28 h-screen">-->
+<!--      <div class="my-auto flex w-2 h-12 border rounded-2xl border-white border-opacity-10 bg-white bg-opacity-10 backdrop-blur-[10%]"></div>-->
+<!--    </div>-->
   </div>
-</section>
+    <div class="uk-container uk-position-center">
+      <table class="uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle uk-table-responsive">
+        <thead>
+        <tr>
+          <th scope="col" class="py-3 px-6">Nr</th>
+          <th scope="col" class="py-3 px-6">Godz.</th>
+          <th scope="col" class="py-3 px-6">Poniedziałek</th>
+          <th scope="col" class="py-3 px-6">Wtorek</th>
+          <th scope="col" class="py-3 px-6">Środa</th>
+          <th scope="col" class="py-3 px-6">Czwartek</th>
+          <th scope="col" class="py-3 px-6">Piątek</th>
+        </tr>
+        </thead>
+        <tbody>
+        %res%
+        </tbody>
+      </table>
+    </div>
 </body>
 </html>
