@@ -1,2 +1,2 @@
 # Start Project
-npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+npx tailwindcss -i input.css -o ./src/assets/styles.css --watch
