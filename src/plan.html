@@ -65,9 +65,18 @@
   </style>
 </head>
 
-<body class="bg-background text-foreground">
-  <div id="sitebar"
-    class="absolute h-screen w-max border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-[10%] p-4 overflow-y-auto z-10">
+<body class="bg-background text-foreground max-h-screen">
+<div class="flex">
+    <button id="menu-toggle" class="group inline-flex fixed z-20 top-4 right-4 w-14 h-14 text-white text-opacity-40 flex items-center justify-center rounded transition" aria-pressed="false" onclick="toggleMenu()">
+      <span class="sr-only">Menu</span>
+      <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <rect class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]" y="7" width="9" height="2" rx="1"></rect>
+        <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+        <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]" y="7" width="9" height="2" rx="1"></rect>
+      </svg>
+    </button>
+
+  <div id="sitebar" class="fixed z-10 lg:relative h-screen w-64 border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-md p-4 overflow-y-auto transition-transform transform -translate-x-full lg:translate-x-0">
     <ul uk-accordion>
       <div class="uk-open">
         <h4 class="font-medium uk-accordion-title">Odziały</h4>
@@ -88,11 +97,10 @@
         </ul>
       </div>
     </ul>
-    <!--    TODO: Kiedys zrobie-->
-    <!--    <div id="hoverBtn" class="ml-28 h-screen">-->
-    <!--      <div class="my-auto flex w-2 h-12 border rounded-2xl border-white border-opacity-10 bg-white bg-opacity-10 backdrop-blur-[10%]"></div>-->
-    <!--    </div>-->
   </div>
+</div>
+
+
   <div class="uk-container uk-position-center">
     <h2 class="uk-h2 text-center mb-5 uk-heading-line"><span>%title%</span></h2>
     <table class="uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle uk-overflow-auto">
@@ -108,7 +116,7 @@
         </tr>
       </thead>
       <tbody>
-        %res%
+      %res%
       </tbody>
     </table>
 
@@ -118,5 +126,16 @@
     </footer>
   </div>
 </body>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('sitebar');
+        const button = document.getElementById('menu-toggle');
+        const isOpen = button.getAttribute('aria-pressed') === 'true';
+
+        // Toggle the menu visibility
+        menu.classList.toggle('-translate-x-full', isOpen);
+        button.setAttribute('aria-pressed', !isOpen);
+    }
+</script>
 
 </html>
