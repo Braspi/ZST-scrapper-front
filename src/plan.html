@@ -13,7 +13,6 @@
   <link href="/styles.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit-icons.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     * {
       font-family: "Poppins", sans-serif;
@@ -67,32 +66,41 @@
 </head>
 
 <body class="bg-background text-foreground">
-<div class="flex">
-    <button id="menu-toggle" class="group inline-flex fixed z-20 top-4 right-4 w-14 h-14 text-white text-opacity-40 flex items-center justify-center rounded transition" aria-pressed="false" onclick="toggleMenu()">
+  <div class="flex">
+    <button id="menu-toggle"
+      class="lg:hidden group fixed z-20 top-4 right-4 w-14 h-14 text-white text-opacity-40 flex items-center justify-center rounded transition"
+      aria-pressed="false" onclick="toggleMenu()">
       <span class="sr-only">Menu</span>
       <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-        <rect class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]" y="7" width="9" height="2" rx="1"></rect>
-        <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45" y="7" width="16" height="2" rx="1"></rect>
-        <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]" y="7" width="9" height="2" rx="1"></rect>
+        <rect
+          class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]"
+          y="7" width="9" height="2" rx="1"></rect>
+        <rect
+          class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45"
+          y="7" width="16" height="2" rx="1"></rect>
+        <rect
+          class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:-rotate-[225deg]"
+          y="7" width="9" height="2" rx="1"></rect>
       </svg>
     </button>
 
-    <div id="sitebar" class="fixed z-10 lg:relative h-screen w-64 border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-md p-4 overflow-y-auto transition-transform transform -translate-x-full lg:translate-x-0">
+    <div id="sitebar"
+      class="fixed z-10 h-screen w-64 border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-md p-4 overflow-y-auto transition-transform transform -translate-x-full lg:translate-x-0">
       <ul uk-accordion>
         <div class="uk-open">
-          <h4 class="font-medium uk-accordion-title">Odziały</h4>
+          <a class="font-medium uk-accordion-title" role="link">Odziały</a>
           <ul class="flex flex-col pl-2 text-sm uk-accordion-content">
             %wards%
           </ul>
         </div>
         <div>
-          <h4 class="font-medium uk-accordion-title">Nauczyciele</h4>
+          <a class="font-medium uk-accordion-title" role="link">Nauczyciele</a>
           <ul class="flex flex-col pl-2 text-sm uk-accordion-content">
             %teachers%
           </ul>
         </div>
         <div>
-          <h4 class="font-medium uk-accordion-title">Sale</h4>
+          <a class="font-medium uk-accordion-title" role="link">Sale</a>
           <ul class="flex flex-col pl-2 text-sm uk-accordion-content">
             %classrooms%
           </ul>
@@ -101,20 +109,20 @@
     </div>
   </div>
 
-
-  <div class="uk-container uk-position-center uk-overflow-auto h-screen -translate-x-1/2 -translate-y-1/3">
+  <div
+    class="uk-container uk-position-center uk-overflow-auto w-screen lg:w-[calc(100vw-16rem)] h-screen lg:ml-32 pt-10">
     <h2 class="uk-h2 text-center mb-5 uk-heading-line"><span>%title%</span></h2>
-    <table class="uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle">
+    <table class="uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle w-full">
       <thead>
-      <tr>
-        <th scope="col" class="py-3 px-6">Nr</th>
-        <th scope="col" class="py-3 px-6">Godz.</th>
-        <th scope="col" class="py-3 px-6">Poniedziałek</th>
-        <th scope="col" class="py-3 px-6">Wtorek</th>
-        <th scope="col" class="py-3 px-6">Środa</th>
-        <th scope="col" class="py-3 px-6">Czwartek</th>
-        <th scope="col" class="py-3 px-6">Piątek</th>
-      </tr>
+        <tr>
+          <th scope="col" class="py-3 px-6">Nr</th>
+          <th scope="col" class="py-3 px-6">Godz.</th>
+          <th scope="col" class="py-3 px-6">Poniedziałek</th>
+          <th scope="col" class="py-3 px-6">Wtorek</th>
+          <th scope="col" class="py-3 px-6">Środa</th>
+          <th scope="col" class="py-3 px-6">Czwartek</th>
+          <th scope="col" class="py-3 px-6">Piątek</th>
+        </tr>
       </thead>
       <tbody>
         %res%
@@ -128,14 +136,24 @@
   </div>
 </body>
 <script>
-    function toggleMenu() {
-        const menu = document.getElementById('sitebar');
-        const button = document.getElementById('menu-toggle');
-        const isOpen = button.getAttribute('aria-pressed') === 'true';
-
-        menu.classList.toggle('-translate-x-full', isOpen);
-        button.setAttribute('aria-pressed', !isOpen);
+  [...document.querySelectorAll('a')].forEach(e => {
+    //add window url params to to the href's params
+    if (e.href == "") return;
+    const url = new URL(e.href)
+    for (let [k, v] of new URLSearchParams(window.location.search).entries()) {
+      url.searchParams.set(k, v)
     }
+    e.href = url.toString();
+  });
+
+  function toggleMenu() {
+    const menu = document.getElementById('sitebar');
+    const button = document.getElementById('menu-toggle');
+    const isOpen = button.getAttribute('aria-pressed') === 'true';
+
+    menu.classList.toggle('-translate-x-full', isOpen);
+    button.setAttribute('aria-pressed', !isOpen);
+  }
 </script>
 
 </html>
