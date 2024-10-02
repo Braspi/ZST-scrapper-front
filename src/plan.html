@@ -116,7 +116,9 @@
       <thead>
         <tr>
           <th scope="col" class="py-3 px-6">Nr</th>
-          <th scope="col" class="py-3 px-6">Godz.</th>
+          <th scope="col" class="py-3 px-6">Godziny <button type="button" class="uk-button-default px-1 rounded"><a
+                class="short" href="?short=1">Lekcje
+                skrócone</a></button></th>
           <th scope="col" class="py-3 px-6">Poniedziałek</th>
           <th scope="col" class="py-3 px-6">Wtorek</th>
           <th scope="col" class="py-3 px-6">Środa</th>
@@ -131,12 +133,17 @@
 
     <footer class="flex justify-between p-4">
       <span>Obowiązuje od: <strong>%effective%</strong></span>
+      <ul class="uk-breadcrumb">
+        %dates%
+      </ul>
       <span>Wygenerowano: <strong>%generated%</strong></span>
+
     </footer>
+
   </div>
 </body>
 <script>
-  [...document.querySelectorAll('a')].forEach(e => {
+  [...document.querySelectorAll("a:not(.date)")].forEach(e => {
     //add window url params to to the href's params
     if (e.href == "") return;
     const url = new URL(e.href)
@@ -153,6 +160,17 @@
 
     menu.classList.toggle('-translate-x-full', isOpen);
     button.setAttribute('aria-pressed', !isOpen);
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const shortLink = document.querySelector('a.short');
+
+  if (urlParams.get('short') === '1') {
+    shortLink.setAttribute('href', shortLink.href.replace('short=1', 'short=0'));
+    shortLink.innerText = "Normalne";
+  } else {
+    shortLink.setAttribute('href', shortLink.href.replace('short=0', 'short=1'));
+    shortLink.innerText = "Skrócone";
   }
 </script>
 
