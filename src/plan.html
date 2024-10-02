@@ -87,7 +87,7 @@
     <div id="sitebar"
       class="fixed z-10 h-screen w-64 border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-md p-4 overflow-y-auto transition-transform transform -translate-x-full lg:translate-x-0">
       <ul uk-accordion>
-        <div class="uk-open">
+        <div>
           <a class="font-medium uk-accordion-title" role="link">Odziały</a>
           <ul class="flex flex-col pl-2 text-sm uk-accordion-content">
             %wards%
@@ -172,6 +172,30 @@
     shortLink.setAttribute('href', shortLink.href.replace('short=0', 'short=1'));
     shortLink.innerText = "Skrócone";
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const url = window.location.pathname;
+    const accordionItems = document.querySelectorAll('ul[uk-accordion] > div');
+    const accordionElement = document.querySelector('ul[uk-accordion]');
+    UIkit.accordion(accordionElement);
+
+    let indexToOpen = null;
+
+    accordionItems.forEach((item, index) => {
+      const title = item.querySelector('.uk-accordion-title').textContent.trim();
+      if (url.startsWith('/o/') && title === 'Odziały') {
+        indexToOpen = index;
+      } else if (url.startsWith('/n/') && title === 'Nauczyciele') {
+        indexToOpen = index;
+      } else if (url.startsWith('/s/') && title === 'Sale') {
+        indexToOpen = index;
+      }
+    });
+
+    if (indexToOpen !== null) {
+      UIkit.accordion(accordionElement).toggle(indexToOpen);
+    }
+  });
 </script>
 
 </html>
