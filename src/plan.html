@@ -13,7 +13,6 @@
   <link href="/styles.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit-icons.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     * {
       font-family: "Poppins", sans-serif;
@@ -68,7 +67,7 @@
 
 <body class="bg-background text-foreground">
 <div class="flex">
-    <button id="menu-toggle" class="lg:hidden group fixed z-20 top-4 right-4 w-14 h-14 text-white text-opacity-40 flex items-center justify-center rounded transition rounded-md border-white border border-opacity-10 bg-white bg-opacity-5 backdrop-blur-md" aria-pressed="false" onclick="toggleMenu()">
+    <button id="menu-toggle" class="group inline-flex fixed z-20 top-4 right-4 w-14 h-14 text-white text-opacity-40 flex items-center justify-center rounded transition" aria-pressed="false" onclick="toggleMenu()">
       <span class="sr-only">Menu</span>
       <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
         <rect class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]" y="7" width="9" height="2" rx="1"></rect>
@@ -77,23 +76,23 @@
       </svg>
     </button>
 
-    <div id="sidebar" class="fixed z-10 lg:relative h-screen w-64 border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-md p-4 overflow-y-auto transition-transform transform -translate-x-full lg:translate-x-0">
+    <div id="sitebar" class="fixed z-10 lg:relative h-screen w-64 border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-md p-4 overflow-y-auto transition-transform transform -translate-x-full lg:translate-x-0">
       <ul uk-accordion>
         <div class="uk-open">
           <h4 class="font-medium uk-accordion-title">Odziały</h4>
-          <ul class="flex flex-col gap-2 pl-2 text-sm uk-accordion-content w-1/2">
+          <ul class="flex flex-col pl-2 text-sm uk-accordion-content">
             %wards%
           </ul>
         </div>
         <div>
           <h4 class="font-medium uk-accordion-title">Nauczyciele</h4>
-          <ul class="flex flex-col gap-2 pl-2 text-sm uk-accordion-content">
+          <ul class="flex flex-col pl-2 text-sm uk-accordion-content">
             %teachers%
           </ul>
         </div>
         <div>
           <h4 class="font-medium uk-accordion-title">Sale</h4>
-          <ul class="flex flex-col gap-2 pl-2 text-sm uk-accordion-content w-1/2">
+          <ul class="flex flex-col pl-2 text-sm uk-accordion-content">
             %classrooms%
           </ul>
         </div>
@@ -129,7 +128,7 @@
 </body>
 <script>
     function toggleMenu() {
-        const menu = document.getElementById('sidebar');
+        const menu = document.getElementById('sitebar');
         const button = document.getElementById('menu-toggle');
         const isOpen = button.getAttribute('aria-pressed') === 'true';
 
