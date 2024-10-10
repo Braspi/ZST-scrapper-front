@@ -15,6 +15,7 @@
   <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/icon.iife.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit-icons.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     * {
       font-family: "Poppins", sans-serif;
@@ -91,10 +92,10 @@
         class="uk-link font-bold">vulcan</a>
     </h1>
     <h2 class="uk-h2 italic text-sm md:text-4xl mt-2">Ponieważ nie możemy mieć dobrych rzeczy oficjalnie.</h2>
-    <section class="flex justify-center pt-10">
+    <section class="flex justify-center pt-6 md:pt-10">
       <div>
-        <div class="p-2 rounded backdrop-blur-sm border border-white/10" class="h-10">
-          <uk-select placeholder="Wybierz plan" searchable uk-cloak>
+        <div class="p-2 rounded backdrop-blur-sm border border-white/10">
+          <uk-select placeholder="Wybierz plan" class="scale-110 md:scale-100" searchable uk-cloak>
             %select%
           </uk-select>
         </div>
