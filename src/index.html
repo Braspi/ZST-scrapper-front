@@ -121,13 +121,7 @@
     window.location.replace(event.detail.value)
   })
 
-  function isMobile() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    if (!isMobile()) return;
-
+  document.querySelector('uk-select').addEventListener("click", () => {
     const ukSelect = document.querySelector("uk-select");
     if (!ukSelect) return;
 
