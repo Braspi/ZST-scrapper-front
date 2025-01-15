@@ -82,6 +82,11 @@
       outline: none;
       padding: 3px;
     }
+
+    .uk-input-fake svg {
+      margin: auto;
+      margin-left: 3px;
+    }
   </style>
 </head>
 
@@ -103,8 +108,7 @@
   </main>
 
   <footer class="pb-10 text-center">
-    &copy; <a href="https://github.com/ponurakk/zstrzeszow-scraper" class="uk-link">ponurakk i braspi</a> 2024
-    <p class="opacity-25">Prosze o 6 bo chce na Erazmus </p>
+    &copy; <a href="https://github.com/ponurakk/zstrzeszow-scraper" class="uk-link">ponurakk i braspi</a> 2024-2025
   </footer>
 </body>
 <script>
@@ -113,24 +117,24 @@
   })
 
   function isMobile() {
-      return /Mobi|Android/i.test(navigator.userAgent);
+    return /Mobi|Android/i.test(navigator.userAgent);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-      if (isMobile()) {
-          const ukSelect = document.querySelector("uk-select");
-          if (ukSelect) {
-              const inputField = ukSelect.querySelector("input") || ukSelect.querySelector("button");
-              if (inputField) {
-                  inputField.click();
-                  setTimeout(() => {
-                      const searchElement = document.querySelector(".uk-custom-select-search");
-                      const searchElementInput = searchElement.querySelector("input")
-                      searchElementInput.focus();
-                  }, 50)
-              }
-          }
-      }
+    if (!isMobile()) return;
+
+    const ukSelect = document.querySelector("uk-select");
+    if (!ukSelect) return;
+
+    const inputField = ukSelect.querySelector("input") || ukSelect.querySelector("button");
+    if (!inputField) return;
+
+    inputField.click();
+    setTimeout(() => {
+      const searchElement = document.querySelector(".uk-custom-select-search");
+      const searchElementInput = searchElement.querySelector("input")
+      searchElementInput.focus();
+    }, 50)
   });
 </script>
 
