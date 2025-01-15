@@ -111,6 +111,27 @@
   document.querySelector('uk-select').addEventListener('uk-select:input', function (event) {
     window.location.replace(event.detail.value)
   })
+
+  function isMobile() {
+      return /Mobi|Android/i.test(navigator.userAgent);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+      if (isMobile()) {
+          const ukSelect = document.querySelector("uk-select");
+          if (ukSelect) {
+              const inputField = ukSelect.querySelector("input") || ukSelect.querySelector("button");
+              if (inputField) {
+                  inputField.click();
+                  setTimeout(() => {
+                      const searchElement = document.querySelector(".uk-custom-select-search");
+                      const searchElementInput = searchElement.querySelector("input")
+                      searchElementInput.focus();
+                  }, 50)
+              }
+          }
+      }
+  });
 </script>
 
 </html>
