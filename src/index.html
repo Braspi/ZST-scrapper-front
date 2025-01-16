@@ -15,6 +15,7 @@
   <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/icon.iife.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit-icons.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     * {
       font-family: "Poppins", sans-serif;
@@ -123,12 +124,14 @@
 
   document.querySelector('uk-select').addEventListener("click", () => {
     const ukSelect = document.querySelector("uk-select");
+    console.log(ukSelect)
     if (!ukSelect) return;
 
     const inputField = ukSelect.querySelector("input") || ukSelect.querySelector("button");
     if (!inputField) return;
 
     inputField.click();
+    inputField.focus();
     setTimeout(() => {
       const searchElement = document.querySelector(".uk-custom-select-search");
       const searchElementInput = searchElement.querySelector("input")
@@ -136,7 +139,7 @@
     }, 50)
   });
 
-  const newYearDate = document.getElementById('newYearDate')
+  const newYearDate = document.getElementById('newYearDate');
   newYearDate.innerHTML = new Date().getFullYear();
 </script>
 
