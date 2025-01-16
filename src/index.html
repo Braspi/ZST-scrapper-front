@@ -123,14 +123,12 @@
 
   document.querySelector('uk-select').addEventListener("click", () => {
     const ukSelect = document.querySelector("uk-select");
-    console.log(ukSelect)
     if (!ukSelect) return;
 
     const inputField = ukSelect.querySelector("input") || ukSelect.querySelector("button");
     if (!inputField) return;
 
     inputField.click();
-    inputField.focus();
     setTimeout(() => {
       const searchElement = document.querySelector(".uk-custom-select-search");
       const searchElementInput = searchElement.querySelector("input")
