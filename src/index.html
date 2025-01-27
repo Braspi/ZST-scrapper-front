@@ -111,6 +111,8 @@
     </section>
   </main>
 
+  <p id="visit-counter">Ładowanie danych...</p>
+
   <footer class="pb-10 text-center">
     &copy; <a href="https://github.com/ponurakk/zstrzeszow-scraper" class="uk-link">ponurakk i braspi</a> 2024-<span
       id="newYearDate"></span>
@@ -138,6 +140,22 @@
 
   const newYearDate = document.getElementById('newYearDate');
   newYearDate.innerHTML = new Date().getFullYear();
+
+  const now = new Date();
+  const currentMonth = `${now.getFullYear()}-${now.getMonth() + 1}`;
+  const lastResetMonth = localStorage.getItem('lastResetMonth');
+  let visitCount = localStorage.getItem('visitCount');
+
+  if (lastResetMonth !== currentMonth) {
+    localStorage.setItem('lastResetMonth', currentMonth);
+    visitCount = 0;
+  }
+
+  visitCount = parseInt(visitCount || 0) + 1;
+
+  localStorage.setItem('visitCount', visitCount);
+
+  document.getElementById('visit-counter').innerText = `Liczba odwiedzin w tym miesiącu ${visitCount}`;
 </script>
 
 </html>
