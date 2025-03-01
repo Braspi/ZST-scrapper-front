@@ -86,6 +86,7 @@
 
     <div id="sitebar"
       class="fixed z-10 h-screen w-64 border-r border-white border-opacity-10 bg-white bg-opacity-5 backdrop-blur-md p-4 overflow-y-auto transition-transform transform -translate-x-full lg:translate-x-0">
+      <a href="/" id="home" class="hover:underline">Home</a>
       <ul uk-accordion>
         <div>
           <a class="font-medium uk-accordion-title" role="link">Odziały</a>
@@ -141,7 +142,7 @@
   </div>
 </body>
 <script>
-  [...document.querySelectorAll("a:not(.date)")].forEach(e => {
+  [...document.querySelectorAll("a:not(.date):not(#home)")].forEach(e => {
     //add window url params to to the href's params
     if (e.href == "") return;
     const url = new URL(e.href)
