@@ -62,6 +62,10 @@
       --destructive-foreground: 0 0% 98%;
       --ring: 240 4.9% 83.9%;
     }
+
+    .highlight {
+      color: blueviolet;
+    }
   </style>
 </head>
 
@@ -192,6 +196,12 @@
       UIkit.accordion(accordionElement).toggle(indexToOpen);
     }
   });
+
+  document.querySelector("table tbody").innerHTML =
+    document.querySelector("table tbody").innerHTML.replace(
+      /\((.*?)\)/g,
+      '(<span class="highlight">$1</span>)'
+    );
 </script>
 
 </html>
